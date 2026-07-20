@@ -1,0 +1,76 @@
+# Supabase Configuration for EduAfrique-Pro
+# Multi-tenant EdTech platform for African schools
+
+[project]
+id = "eduafrique-pro"
+name = "EduAfrique-Pro"
+region = "us-east-1"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 16
+major_version = 16
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+port = 54324
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+jwt_expiry = 3600
+refresh_token_rotation_enabled = true
+refresh_token_reuse_interval = 10
+
+# RLS (Row Level Security) - ENABLED ON ALL TABLES
+# Each school (tenant) is isolated via school_id column + RLS policies
+# Policy: user sees only rows where school_id = their school_id from profiles
+
+[auth.external]
+email_enabled = true
+phone_enabled = true
+
+[auth.external.providers]
+# Configure OAuth providers as needed for African schools
+# google = { enabled = true, client_id = "env(GOOGLE_CLIENT_ID)", secret = "env(GOOGLE_CLIENT_SECRET)" }
+# facebook = { enabled = true, client_id = "env(FACEBOOK_CLIENT_ID)", secret = "env(FACEBOOK_CLIENT_SECRET)" }
+# apple = { enabled = true, client_id = "env(APPLE_CLIENT_ID)", secret = "env(APPLE_CLIENT_SECRET)" }
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+secure_email_change_enabled = false
+double_confirm_changes = false
+
+[auth.sms]
+enabled = false
+
+[auth.mfa]
+enabled = true
+
+[realtime]
+enabled = true
+ip_version = "ipv4"
+port = 54325
+max_connections = 1000
+
+[storage]
+enabled = true
+port = 54326
+file_size_limit = "50MiB"
+allowed_mime_types = ["image/*", "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]
+
+[edge_runtime]
+enabled = false
+
+[functions]
+enabled = false

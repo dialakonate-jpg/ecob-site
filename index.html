@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOB | École de Business Bilingue - Excellence Privée à Bamako</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Playfair Display pour le prestige, Inter pour le confort de lecture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1329; /* Bleu très foncé Premium */
+            color: #f8fafc;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom Colors Configurations for Tailwind */
+        :root {
+            --color-dark-blue: #0b1329;
+            --color-premium-red: #be123c; /* Rouge Élite / Crimson */
+            --color-gold: #d97706;
+        }
+        /* Fluid Fade-In Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(11, 19, 41, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        /* Auto-scroll Gallery */
+        .gallery-track {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+        .gallery-track img {
+            flex: 0 0 auto;
+            width: 320px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-right: 16px;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- NAV BAR (ULTRA PREMIUM GLASSMORPHISM) -->
+    <nav class="glass-nav fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 lg:px-16 py-4 flex items-center justify-between">
+        <a href="#" class="flex items-center space-x-3 group">
+            <img src="logo.png" alt="ECOB Logo" class="h-14 w-auto object-contain bg-white p-1 rounded transition-transform duration-500 group-hover:scale-105">
+            <div class="flex flex-col">
+                <span class="text-xl font-bold tracking-widest text-white uppercase serif-title">ECOB</span>
+                <span class="text-[10px] tracking-wider text-rose-500 uppercase font-semibold">Université Bilingue</span>
+            </div>
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+            <a href="#about" class="text-slate-300 hover:text-rose-500 transition-colors duration-300">L'Institut</a>
+            <a href="#programmes" class="text-slate-300 hover:text-rose-500 transition-colors duration-300">Filières d'Excellence</a>
+            <a href="#partenariat" class="text-slate-300 hover:text-rose-500 transition-colors duration-300">Partenariats</a>
+            <a href="#tarifs" class="text-slate-300 hover:text-rose-500 transition-colors duration-300">Admissions & Tarifs</a>
+        </div>
+
+        <div class="hidden md:block">
+            <button id="openInscription" class="bg-rose-700 hover:bg-rose-600 text-white text-xs font-semibold uppercase tracking-widest px-6 py-3 rounded-sm transition-all duration-300 shadow-lg shadow-rose-900/40 hover:-translate-y-0.5">
+                S'inscrire Maintenant
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (PRESTIGE & IMPACT) -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-[#0b1329] to-[#050a14]">
+        <!-- Image de fond locale avec transparence -->
+        <div class="absolute inset-0 bg-[url('hero-bg.png')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+        <!-- Éléments graphiques premium d'arrière-plan -->
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-rose-700/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-700/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-6xl mx-auto px-6 text-center z-10 space-y-8">
+            <div class="inline-flex items-center space-x-2 bg-rose-950/50 border border-rose-800/60 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider text-rose-400 uppercase animate-pulse">
+                <i class="fa-solid fa-graduation-cap"></i> <span>Inscriptions Ouvertes · Système LMD</span>
+            </div>
+            
+            <h1 class="serif-title text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white max-w-5xl mx-auto leading-[1.15]">
+                Bâtissez un Avenir Global en <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-500">Anglais & Français</span>
+            </h1>
+            
+            <p class="text-base sm:text-xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+                L'École de Business Bilingue (ECOB) fusionne l'excellence managériale africaine aux exigences des multinationales. Devenez un leader bilingue prêt à impacter le marché mondial.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#programmes" class="w-full sm:w-auto bg-rose-700 hover:bg-rose-600 text-white font-medium px-8 py-4 rounded-sm transition-all duration-300 shadow-xl shadow-rose-900/30 flex items-center justify-center space-x-3">
+                    <span>Découvrir nos filières</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <button id="openInscriptionHero" class="w-full sm:w-auto bg-slate-800/80 border border-slate-700 hover:bg-slate-700 text-white font-medium px-8 py-4 rounded-sm transition-all duration-300 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-file-invoice-dollar text-rose-500"></i> <span>S'inscrire Maintenant</span>
+                </button>
+            </div>
+
+            <!-- Badge Ordinateur Offert -->
+            <div class="pt-10 max-w-md mx-auto">
+                <div class="bg-gradient-to-r from-amber-600/20 to-rose-600/20 border border-amber-500/30 rounded-lg p-4 flex items-center space-x-4 text-left">
+                    <div class="bg-amber-500 text-slate-950 text-2xl p-3 rounded-md">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-amber-400 font-semibold text-sm uppercase tracking-wider">Ordinateur Offert</h4>
+                        <p class="text-xs text-slate-300 mt-0.5">En cas de règlement intégral de la scolarité à l'inscription ou sous 15 jours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-xl"></i>
+        </div>
+    </section>
+
+    <!-- FOND TRANSITION HERO -> À PROPOS -->
+    <div class="relative h-32 w-full overflow-hidden">
+        <div class="absolute inset-0 bg-[url('hero-bg2.png')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent"></div>
+    </div>
+
+    <!-- SECTION À PROPOS D'ECOB (HISTOIRE, MISSION, VISION, STATS) -->
+    <section id="about" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto reveal">
+        <div class="text-center space-y-4 mb-16">
+            <div class="text-xs font-bold tracking-widest text-rose-500 uppercase">À Propos d'ECOB</div>
+            <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">Notre Histoire, Notre Mission, Notre Vision</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+            <!-- Histoire -->
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl space-y-4">
+                <div class="text-rose-500 text-3xl"><i class="fa-solid fa-landmark"></i></div>
+                <h3 class="serif-title text-xl font-bold text-white">Notre Histoire</h3>
+                <p class="text-slate-400 font-light leading-relaxed">
+                    Fondée en <span class="text-white font-medium">2009</span>, l'Université Bilingue ECOB (École de Business Bilingue) s'est établie comme une institution pionnière au Mali, spécialisée dans l'enseignement supérieur bilingue (français/anglais) et l'agriculture innovante.
+                </p>
+                <p class="text-slate-400 font-light leading-relaxed pt-2">
+                    Notre mission est de former des cadres compétents, bilingues et entrepreneuriaux, capables de relever les défis du secteur agricole et du business moderne en Afrique de l'Ouest.
+                </p>
+                <p class="text-slate-400 font-light leading-relaxed pt-2">
+                    Avec une ferme pédagogique moderne et des partenariats internationaux, ECOB offre une formation pratique et théorique d'excellence, reconnue au Mali et à l'international.
+                </p>
+            </div>
+
+            <!-- Mission -->
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl space-y-4">
+                <div class="text-emerald-500 text-3xl"><i class="fa-solid fa-bullseye"></i></div>
+                <h3 class="serif-title text-xl font-bold text-white">Notre Mission</h3>
+                <p class="text-slate-400 font-light leading-relaxed">
+                    Offrir une formation bilingue de qualité, axée sur la pratique et l'innovation, préparant les étudiants à devenir des leaders dans les domaines de l'agriculture, du business et de l'entrepreneuriat.
+                </p>
+            </div>
+
+            <!-- Vision -->
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl space-y-4">
+                <div class="text-amber-500 text-3xl"><i class="fa-solid fa-eye"></i></div>
+                <h3 class="serif-title text-xl font-bold text-white">Notre Vision</h3>
+                <p class="text-slate-400 font-light leading-relaxed">
+                    Devenir l'institution de référence en Afrique de l'Ouest pour la formation bilingue en sciences agronomiques et business, reconnue pour son excellence académique et son impact socio-économique.
+                </p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl text-center">
+                <h3 class="serif-title text-4xl sm:text-5xl font-bold text-rose-500">500+</h3>
+                <p class="text-slate-400 text-sm uppercase tracking-wider mt-2">Étudiants Actifs</p>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl text-center">
+                <h3 class="serif-title text-4xl sm:text-5xl font-bold text-rose-500">15+</h3>
+                <p class="text-slate-400 text-sm uppercase tracking-wider mt-2">Années d'Excellence</p>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl text-center">
+                <h3 class="serif-title text-4xl sm:text-5xl font-bold text-rose-500">20+</h3>
+                <p class="text-slate-400 text-sm uppercase tracking-wider mt-2">Partenaires Internationaux</p>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl text-center">
+                <h3 class="serif-title text-4xl sm:text-5xl font-bold text-rose-500">100%</h3>
+                <p class="text-slate-400 text-sm uppercase tracking-wider mt-2">Insertion Professionnelle</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CAMPUS (IMAGE) -->
+    <section class="py-24 px-6 lg:px-16 max-w-7xl mx-auto bg-slate-950/20 rounded-3xl my-12 border border-slate-900 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="text-xs font-bold tracking-widest text-rose-500 uppercase">Prestige Académique</div>
+                <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white leading-tight">Un Campus Moderne à la Hauteur de vos Ambitions</h2>
+                <p class="text-slate-400 leading-relaxed font-light">
+                    Idéalement implanté à <strong>Sotuba ACI</strong>, l'Institut Supérieur ECOB offre des infrastructures de premier plan pensées pour l'excellence pédagogique. Nos programmes en Licences Professionnelles et Masters sont structurés pour catalyser l'employabilité et l'agilité internationale de chaque étudiant.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4">
+                    <div class="border-l-2 border-rose-600 pl-4">
+                        <h3 class="text-2xl font-bold text-white">100%</h3>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mt-1">Cursus Bilingue Innovant</p>
+                    </div>
+                    <div class="border-l-2 border-rose-600 pl-4">
+                        <h3 class="text-2xl font-bold text-white">LMD</h3>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider mt-1">Diplômes Habilités et Reconnus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group overflow-hidden rounded-xl shadow-2xl border border-slate-800">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent opacity-60 z-10"></div>
+                <img src="campus.png" alt="Bâtiment Campus ECOB" class="w-full h-[450px] object-cover transform duration-700 group-hover:scale-105">
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE PHOTOS - DÉFILEMENT HORIZONTAL AUTOMATIQUE -->
+    <section id="galerie" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto reveal">
+        <div class="text-center space-y-4 mb-16">
+            <div class="text-xs font-bold tracking-widest text-rose-500 uppercase">Vie du Campus</div>
+            <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">Galerie Photos</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto font-light">Découvrez la vie étudiante, les infrastructures et les événements de l'ECOB.</p>
+        </div>
+        <div class="overflow-hidden">
+            <div class="gallery-track" id="galleryTrack">
+                <img src="18.07.2026_08.15.25_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.17.35_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.18.54_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.19.39_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.21.44_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.22.18_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.22.53_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.24.29_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_19.58.53_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.01.17_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.02.57_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.09.53_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.17.29_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.17.54_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.36.27_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.37.30_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.38.38_REC.png" alt="Campus ECOB">
+                <!-- Duplicata pour boucle infinie fluide -->
+                <img src="18.07.2026_08.15.25_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.17.35_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.18.54_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.19.39_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.21.44_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.22.18_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.22.53_REC.png" alt="Campus ECOB">
+                <img src="18.07.2026_08.24.29_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_19.58.53_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.01.17_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.02.57_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.09.53_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.17.29_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.17.54_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.36.27_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.37.30_REC.png" alt="Campus ECOB">
+                <img src="17.07.2026_20.38.38_REC.png" alt="Campus ECOB">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION FILIÈRES (GRID INTERACTIF ULTRA PREMIUM - 5 DÉPARTEMENTS) -->
+    <section id="programmes" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto reveal">
+        <div class="text-center space-y-4 mb-16">
+            <div class="text-xs font-bold tracking-widest text-rose-500 uppercase">Départements d'Études</div>
+            <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">Nos Filières Majeures</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto font-light">Explorez des parcours d'apprentissage rigoureux façonnés avec les leaders mondiaux de l'industrie. Toutes les formations sont proposées en LICENCE et MASTER, en bilingue français/anglais.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
+            <!-- Carte 1: TECHNOLOGIE & INFORMATIQUE -->
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-xl shadow-xl hover:border-blue-900/60 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group cursor-pointer" onclick="openDeptModal('tech')">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-blue-600/5 rounded-full blur-xl group-hover:bg-blue-600/10 transition-all"></div>
+                <div class="text-blue-500 text-3xl mb-4"><i class="fa-solid fa-microchip"></i></div>
+                <h3 class="text-lg font-bold text-white mb-2">Technologie &<br>Informatique</h3>
+                <p class="text-xs text-slate-400 mb-4">4 spécialisations</p>
+                <div class="text-rose-500 text-xs font-semibold">Cliquer pour détails →</div>
+            </div>
+
+            <!-- Carte 2: COMMUNICATION & MÉDIA -->
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-xl shadow-xl hover:border-purple-900/60 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group cursor-pointer" onclick="openDeptModal('com')">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-purple-600/5 rounded-full blur-xl group-hover:bg-purple-600/10 transition-all"></div>
+                <div class="text-purple-500 text-3xl mb-4"><i class="fa-solid fa-broadcast-tower"></i></div>
+                <h3 class="text-lg font-bold text-white mb-2">Communication<br>& Média</h3>
+                <p class="text-xs text-slate-400 mb-4">3 spécialisations</p>
+                <div class="text-rose-500 text-xs font-semibold">Cliquer pour détails →</div>
+            </div>
+
+            <!-- Carte 3: GESTION & ÉCONOMIE -->
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-xl shadow-xl hover:border-emerald-900/60 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group cursor-pointer" onclick="openDeptModal('gestion')">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-600/5 rounded-full blur-xl group-hover:bg-emerald-600/10 transition-all"></div>
+                <div class="text-emerald-500 text-3xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="text-lg font-bold text-white mb-2">Gestion &<br>Économie</h3>
+                <p class="text-xs text-slate-400 mb-4">4 spécialisations</p>
+                <div class="text-rose-500 text-xs font-semibold">Cliquer pour détails →</div>
+            </div>
+
+            <!-- Carte 4: MINES & GÉOLOGIE -->
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-xl shadow-xl hover:border-amber-900/60 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group cursor-pointer" onclick="openDeptModal('mines')">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-amber-600/5 rounded-full blur-xl group-hover:bg-amber-600/10 transition-all"></div>
+                <div class="text-amber-500 text-3xl mb-4"><i class="fa-solid fa-mountain-sun"></i></div>
+                <h3 class="text-lg font-bold text-white mb-2">Mines &<br>Géologie</h3>
+                <p class="text-xs text-slate-400 mb-4">7 spécialisations</p>
+                <div class="text-rose-500 text-xs font-semibold">Cliquer pour détails →</div>
+            </div>
+
+            <!-- Carte 5: SCIENCES AGRONOMIQUES -->
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-xl shadow-xl hover:border-green-900/60 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group cursor-pointer" onclick="openDeptModal('agro')">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-green-600/5 rounded-full blur-xl group-hover:bg-green-600/10 transition-all"></div>
+                <div class="text-green-500 text-3xl mb-4"><i class="fa-solid fa-seedling"></i></div>
+                <h3 class="text-lg font-bold text-white mb-2">Sciences<br>Agronomiques</h3>
+                <p class="text-xs text-slate-400 mb-4">6 spécialisations</p>
+                <div class="text-rose-500 text-xs font-semibold">Cliquer pour détails →</div>
+            </div>
+        </div>
+
+        <!-- Badges de confiance -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-lg">
+                <div class="text-2xl font-bold text-rose-500">100%</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Bilingue</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-lg">
+                <div class="text-2xl font-bold text-amber-500">LMD</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Reconnu</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-lg">
+                <div class="text-2xl font-bold text-emerald-500">Stages</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Garantis</div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-800 p-4 rounded-lg">
+                <div class="text-2xl font-bold text-blue-500">Pro</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Insertion</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PARTENARIAT D'ÉLITE (SENO MINING SERVICES) -->
+    <section id="partenariat" class="py-24 bg-[#070d1c] relative border-y border-slate-900 overflow-hidden reveal">
+        <div class="absolute -right-40 -bottom-40 w-96 h-96 bg-rose-900/5 rounded-full blur-3xl"></div>
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <div class="inline-block bg-amber-950/40 border border-amber-800/50 rounded px-3 py-1 text-[11px] font-bold tracking-widest text-amber-400 uppercase">
+                    Alliance Stratégique Industrielle
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="seno-logo.png" alt="Seno Mining Services Logo" class="h-16 w-auto object-contain bg-white/10 p-2 rounded-lg border border-amber-800/50">
+                    <h2 class="serif-title text-3xl sm:text-4xl font-bold text-white leading-tight">Partenariat Exclusif avec <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-500">Seno Mining Services</span></h2>
+                </div>
+                <p class="text-slate-400 font-light leading-relaxed">
+                    Afin d'assurer une immersion terrain totale, l'ECOB s'associe à **Seno Mining Services (SMS)**, géant de l'ingénierie et des services opérationnels miniers au Mali. Ce partenariat propulse nos étudiants directement au cœur de l'action.
+                </p>
+            </div>
+
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800/80 space-y-3">
+                    <div class="text-amber-500 text-xl"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <h4 class="font-semibold text-white text-base">Stages Garantis en Immersion</h4>
+                    <p class="text-xs text-slate-400 font-light leading-relaxed">Accès privilégié aux sites miniers actifs d'envergure internationale (ex: Sadiola) pour forger votre expérience professionnelle.</p>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800/80 space-y-3">
+                    <div class="text-emerald-500 text-xl"><i class="fa-solid fa-tractor"></i></div>
+                    <h4 class="font-semibold text-white text-base">Synergie Agro-Mines</h4>
+                    <p class="text-xs text-slate-400 font-light leading-relaxed">Travaux pratiques connectés à la réhabilitation environnementale et à la mécanisation lourde des sols.</p>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800/80 space-y-3">
+                    <div class="text-blue-400 text-xl"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <h4 class="font-semibold text-white text-base">Seno Mining School Experts</h4>
+                    <p class="text-xs text-slate-400 font-light leading-relaxed">Des interventions et masterclass menées en direct par des ingénieurs et experts chevronnés de l'industrie extractive.</p>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800/80 space-y-3">
+                    <div class="text-rose-500 text-xl"><i class="fa-solid fa-briefcase"></i></div>
+                    <h4 class="font-semibold text-white text-base">Double Compétence Élite</h4>
+                    <p class="text-xs text-slate-400 font-light leading-relaxed">Combinez l'expertise managériale bilingue et la technicité sectorielle requise par les grandes multinationales.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION TARIFS & ADMISSIONS (STRUCTURE RIGOUREUSE EXTRAITE DE LA BROCHURE) -->
+    <section id="tarifs" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-16">
+            <div class="text-xs font-bold tracking-widest text-rose-500 uppercase">Investissement & Transparence</div>
+            <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">Grille Tarifaire Officielle</h2>
+            <p class="text-slate-400 max-w-xl mx-auto font-light text-sm">3 grilles selon filières. Modalités flexibles : paiement par tranches (3 versements) ou mensuel (6 versements). Ordinateur offert si règlement intégral à l'inscription ou sous 15 jours.</p>
+        </div>
+
+        <!-- 1. GESTION & ÉCONOMIE / COMMUNICATION & MÉDIA / TECHNOLOGIE & INFORMATIQUE -->
+        <div class="space-y-12 mb-16">
+            <div class="bg-gradient-to-r from-blue-900/20 to-indigo-900/20 border border-blue-800/50 rounded-xl p-4 mb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-600 text-white p-3 rounded-lg"><i class="fa-solid fa-laptop-code text-xl"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Filières : Gestion & Économie / Communication & Média / Technologie & Informatique</h3>
+                        <p class="text-slate-400 text-sm">Finance & Comptabilité, RH, Logistique, GEA, Marketing, Journalisme, Informatique de Gestion, Réseaux, IA, Cybersécurité...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cycle Licence -->
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+                <div class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex justify-between items-center">
+                    <h3 class="serif-title text-xl font-bold text-white tracking-wide">Cycle Licence (L1 - L2 - L3)</h3>
+                    <span class="text-[10px] bg-blue-900/50 text-blue-400 font-bold uppercase tracking-wider px-2 py-1 rounded">LMD Académique</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-950/60 text-xs uppercase tracking-wider text-slate-400">
+                            <tr>
+                                <th class="px-6 py-4">Niveau</th>
+                                <th class="px-6 py-4">Frais Inscription (Nouveau / Ancien)</th>
+                                <th class="px-6 py-4">Scolarité Annuelle</th>
+                                <th class="px-6 py-4">Par Tranches (3 versements)</th>
+                                <th class="px-6 py-4">Mensuel (6 versements)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 font-light">
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 1</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-blue-400 font-semibold">650 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 350k | V2: 200k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 150k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 2</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-blue-400 font-semibold">650 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 350k | V2: 200k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 150k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 3</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-blue-400 font-semibold">750 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 350k | V2: 300k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 250k puis 100k × 5 mois</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Cycle Master -->
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+                <div class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex justify-between items-center">
+                    <h3 class="serif-title text-xl font-bold text-white tracking-wide">Cycle Master (M1 - M2)</h3>
+                    <span class="text-[10px] bg-indigo-900/50 text-indigo-400 font-bold uppercase tracking-wider px-2 py-1 rounded">Élite Professionnelle</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-950/60 text-xs uppercase tracking-wider text-slate-400">
+                            <tr>
+                                <th class="px-6 py-4">Niveau</th>
+                                <th class="px-6 py-4">Frais Inscription (Nouveau / Ancien)</th>
+                                <th class="px-6 py-4">Scolarité Annuelle</th>
+                                <th class="px-6 py-4">Par Tranches (3 versements)</th>
+                                <th class="px-6 py-4">Mensuel (6 versements)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 font-light">
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Master 1</td>
+                                <td class="px-6 py-4">150 000 F <span class="text-slate-500 text-xs">/ 75 000 F</span></td>
+                                <td class="px-6 py-4 text-indigo-400 font-semibold">800 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 400k | V2: 300k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 300k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Master 2</td>
+                                <td class="px-6 py-4">150 000 F <span class="text-slate-500 text-xs">/ 75 000 F</span></td>
+                                <td class="px-6 py-4 text-indigo-400 font-semibold">900 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 450k | V2: 350k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 400k puis 100k × 5 mois</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. MINES, GÉOLOGIE ET PÉTROLE -->
+        <div class="space-y-12 mb-16 border-t border-slate-800 pt-16">
+            <div class="bg-gradient-to-r from-amber-900/20 to-orange-900/20 border border-amber-800/50 rounded-xl p-4 mb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-amber-600 text-white p-3 rounded-lg"><i class="fa-solid fa-mountain-sun text-xl"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Filière : Mines, Géologie et Pétrole</h3>
+                        <p class="text-slate-400 text-sm">Partenaire officiel : SENO MINING SERVICES — Géologie appliquée, Topographie & Drones, Géotechnique, Management minier, Ingénierie pétrolière...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cycle Licence -->
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+                <div class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex justify-between items-center">
+                    <h3 class="serif-title text-xl font-bold text-white tracking-wide">Cycle Licence (L1 - L2 - L3)</h3>
+                    <span class="text-[10px] bg-amber-900/50 text-amber-400 font-bold uppercase tracking-wider px-2 py-1 rounded">LMD Académique</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-950/60 text-xs uppercase tracking-wider text-slate-400">
+                            <tr>
+                                <th class="px-6 py-4">Niveau</th>
+                                <th class="px-6 py-4">Frais Inscription (Nouveau / Ancien)</th>
+                                <th class="px-6 py-4">Scolarité Annuelle</th>
+                                <th class="px-6 py-4">Par Tranches (3 versements)</th>
+                                <th class="px-6 py-4">Mensuel (6 versements)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 font-light">
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 1</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-amber-400 font-semibold">800 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 400k | V2: 230k | V3: 170k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 300k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 2</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-amber-400 font-semibold">800 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 500k | V2: 300k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 300k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 3</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-amber-400 font-semibold">900 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 700k | V2: 200k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 500k puis 100k × 5 mois</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Cycle Master -->
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+                <div class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex justify-between items-center">
+                    <h3 class="serif-title text-xl font-bold text-white tracking-wide">Cycle Master (M1 - M2)</h3>
+                    <span class="text-[10px] bg-orange-900/50 text-orange-400 font-bold uppercase tracking-wider px-2 py-1 rounded">Élite Professionnelle</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-950/60 text-xs uppercase tracking-wider text-slate-400">
+                            <tr>
+                                <th class="px-6 py-4">Niveau</th>
+                                <th class="px-6 py-4">Frais Inscription (Nouveau / Ancien)</th>
+                                <th class="px-6 py-4">Scolarité Annuelle</th>
+                                <th class="px-6 py-4">Par Tranches (3 versements)</th>
+                                <th class="px-6 py-4">Mensuel (6 versements)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 font-light">
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Master 1</td>
+                                <td class="px-6 py-4">200 000 F <span class="text-slate-500 text-xs">/ 100 000 F</span></td>
+                                <td class="px-6 py-4 text-orange-400 font-semibold">1 000 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 1 000k | V2: 400k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 500k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Master 2</td>
+                                <td class="px-6 py-4">200 000 F <span class="text-slate-500 text-xs">/ 100 000 F</span></td>
+                                <td class="px-6 py-4 text-orange-400 font-semibold">1 500 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 1 000k | V2: 400k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 1 000k puis 100k × 5 mois</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. AGRO-BUSINESS -->
+        <div class="space-y-12 mb-16 border-t border-slate-800 pt-16">
+            <div class="bg-gradient-to-r from-emerald-900/20 to-teal-900/20 border border-emerald-800/50 rounded-xl p-4 mb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-emerald-600 text-white p-3 rounded-lg"><i class="fa-solid fa-seedling text-xl"></i></div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Filière : Sciences Agronomiques / Agro-Business</h3>
+                        <p class="text-slate-400 text-sm">Agro-Business, Management Agroalimentaire, Technique & Qualité, Entrepreneuriat Agricole, Agriculture Durable, Production Horticole — Ferme pédagogique moderne</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cycle Licence -->
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+                <div class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex justify-between items-center">
+                    <h3 class="serif-title text-xl font-bold text-white tracking-wide">Cycle Licence (L1 - L2 - L3)</h3>
+                    <span class="text-[10px] bg-emerald-900/50 text-emerald-400 font-bold uppercase tracking-wider px-2 py-1 rounded">LMD Académique</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-950/60 text-xs uppercase tracking-wider text-slate-400">
+                            <tr>
+                                <th class="px-6 py-4">Niveau</th>
+                                <th class="px-6 py-4">Frais Inscription (Nouveau / Ancien)</th>
+                                <th class="px-6 py-4">Scolarité Annuelle</th>
+                                <th class="px-6 py-4">Par Tranches (3 versements)</th>
+                                <th class="px-6 py-4">Mensuel (6 versements)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 font-light">
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 1</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-emerald-400 font-semibold">650 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 350k | V2: 200k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 150k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 2</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-emerald-400 font-semibold">650 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 350k | V2: 200k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 150k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Licence 3</td>
+                                <td class="px-6 py-4">100 000 F <span class="text-slate-500 text-xs">/ 50 000 F</span></td>
+                                <td class="px-6 py-4 text-emerald-400 font-semibold">800 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 400k | V2: 300k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 300k puis 100k × 5 mois</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Cycle Master -->
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+                <div class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex justify-between items-center">
+                    <h3 class="serif-title text-xl font-bold text-white tracking-wide">Cycle Master (M1 - M2)</h3>
+                    <span class="text-[10px] bg-teal-900/50 text-teal-400 font-bold uppercase tracking-wider px-2 py-1 rounded">Élite Professionnelle</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-950/60 text-xs uppercase tracking-wider text-slate-400">
+                            <tr>
+                                <th class="px-6 py-4">Niveau</th>
+                                <th class="px-6 py-4">Frais Inscription (Nouveau / Ancien)</th>
+                                <th class="px-6 py-4">Scolarité Annuelle</th>
+                                <th class="px-6 py-4">Par Tranches (3 versements)</th>
+                                <th class="px-6 py-4">Mensuel (6 versements)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 font-light">
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Master 1</td>
+                                <td class="px-6 py-4">200 000 F <span class="text-slate-500 text-xs">/ 100 000 F</span></td>
+                                <td class="px-6 py-4 text-teal-400 font-semibold">850 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 400k | V2: 300k | V3: 150k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 350k puis 100k × 5 mois</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/20">
+                                <td class="px-6 py-4 font-medium text-white">Master 2</td>
+                                <td class="px-6 py-4">200 000 F <span class="text-slate-500 text-xs">/ 100 000 F</span></td>
+                                <td class="px-6 py-4 text-teal-400 font-semibold">1 000 000 F CFA</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 600k | V2: 300k | V3: 100k</td>
+                                <td class="px-6 py-4 text-xs text-slate-400">V1: 500k puis 100k × 5 mois</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Frais supplémentaires Agro -->
+            <div class="bg-slate-950/50 border border-emerald-800/50 rounded-xl p-6">
+                <h4 class="text-emerald-400 font-semibold text-sm uppercase tracking-wider mb-4 flex items-center space-x-2"><i class="fa-solid fa-circle-info"></i><span>Frais Supplémentaires Agro-Business</span></h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-800 flex items-center space-x-3">
+                        <i class="fa-solid fa-flask text-emerald-500 text-xl"></i>
+                        <div>
+                            <p class="text-white font-medium">Travaux Pratiques</p>
+                            <p class="text-xs text-slate-400">200 000 F CFA — Obligatoire L1 à M1, optionnel en M2</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-800 flex items-center space-x-3">
+                        <i class="fa-solid fa-shirt text-emerald-500 text-xl"></i>
+                        <div>
+                            <p class="text-white font-medium">Tenue Scolaire</p>
+                            <p class="text-xs text-slate-400">50 000 F CFA l'unité — Exigée à l'établissement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Régulation générale -->
+        <div class="bg-slate-950/50 border border-rose-800/50 rounded-xl p-6">
+            <h4 class="text-rose-400 font-semibold text-sm uppercase tracking-wider mb-3 flex items-center space-x-2"><i class="fa-solid fa-triangle-exclamation"></i><span>Régulation Interne — Important</span></h4>
+            <ul class="text-xs text-slate-400 space-y-2">
+                <li><i class="fa-solid fa-circle text-rose-500 text-[6px] mr-2"></i>Tout frais engagé au titre d'une année académique est <strong class="text-white">non remboursable</strong>.</li>
+                <li><i class="fa-solid fa-circle text-rose-500 text-[6px] mr-2"></i><strong class="text-white">Ordinateur offert</strong> en cas de règlement intégral de la scolarité à l'inscription ou sous 15 jours.</li>
+                <li><i class="fa-solid fa-circle text-rose-500 text-[6px] mr-2"></i>Modalités de paiement flexibles : par tranches (3 versements) ou mensuel (6 versements).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- TÉMOIGNAGES ÉTUDIANTS -->
+    <section id="temoignages" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto reveal">
+        <div class="text-center space-y-4 mb-16">
+            <div class="text-xs font-bold tracking-widest text-rose-500 uppercase">Témoignages</div>
+            <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">Témoignages de Nos Étudiants</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto font-light">Découvrez ce que nos diplômés disent de leur expérience à ECOB.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Témoignage 1 -->
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl hover:border-rose-900/60 transition-all duration-300">
+                <div class="flex items-center space-x-1 mb-4">
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                </div>
+                <p class="text-slate-300 leading-relaxed mb-6 italic">"ECOB m'a donné les outils et la confiance pour créer ma propre entreprise agricole. L'approche pratique est vraiment remarquable."</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-rose-600 to-amber-500 rounded-full flex items-center justify-center text-white font-bold text-lg">AD</div>
+                    <div>
+                        <h4 class="font-semibold text-white">Aminata Diallo</h4>
+                        <p class="text-xs text-rose-500 uppercase tracking-wider">Master Agro-Business</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Témoignage 2 -->
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl hover:border-rose-900/60 transition-all duration-300">
+                <div class="flex items-center space-x-1 mb-4">
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                </div>
+                <p class="text-slate-300 leading-relaxed mb-6 italic">"La ferme pédagogique et les stages en entreprise m'ont permis d'acquérir une expérience inestimable avant de terminer mes études."</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">MT</div>
+                    <div>
+                        <h4 class="font-semibold text-white">Moussa Traoré</h4>
+                        <p class="text-xs text-emerald-500 uppercase tracking-wider">Licence Agro-Business</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Témoignage 3 -->
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl hover:border-rose-900/60 transition-all duration-300">
+                <div class="flex items-center space-x-1 mb-4">
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                </div>
+                <p class="text-slate-300 leading-relaxed mb-6 italic">"Le bilinguisme et la qualité de l'enseignement m'ont ouvert des portes à l'international. Je travaille maintenant pour une entreprise multinationale."</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg">FK</div>
+                    <div>
+                        <h4 class="font-semibold text-white">Fatoumata Keita</h4>
+                        <p class="text-xs text-blue-500 uppercase tracking-wider">Master Management Agroalimentaire</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Témoignage 4 -->
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl hover:border-rose-900/60 transition-all duration-300">
+                <div class="flex items-center space-x-1 mb-4">
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                </div>
+                <p class="text-slate-300 leading-relaxed mb-6 italic">"La formation en GEA m'a permis de gérer efficacement ma propre structure. Les cours de comptabilité et fiscalité sont directement applicables."</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-600 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg">IS</div>
+                    <div>
+                        <h4 class="font-semibold text-white">Ibrahim Sow</h4>
+                        <p class="text-xs text-amber-500 uppercase tracking-wider">Licence GEA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Témoignage 5 -->
+            <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-xl hover:border-rose-900/60 transition-all duration-300">
+                <div class="flex items-center space-x-1 mb-4">
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                </div>
+                <p class="text-slate-300 leading-relaxed mb-6 italic">"Les stages en mines avec Seno Mining Services ont été décisifs. J'ai été embauché directement après mon diplôme."</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-slate-600 to-zinc-500 rounded-full flex items-center justify-center text-white font-bold text-lg">AK</div>
+                    <div>
+                        <h4 class="font-semibold text-white">Adama Konaté</h4>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider">Master Géologie & Mines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER ULTRA-MINIMALISTE & DESIGN -->
+    <footer class="bg-slate-950 border-t border-slate-900 text-slate-400 py-16 px-6 lg:px-16 text-sm font-light">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <img src="logo.png" alt="ECOB Logo" class="h-10 w-auto bg-white p-1 rounded">
+                    <span class="text-white font-bold text-lg serif-title tracking-widest">ECOB</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Institut Supérieur d'enseignement du Business Bilingue. En marche continue vers l'excellence internationale.
+                </p>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-xs uppercase tracking-widest">Localisation Globale</h4>
+                <p class="text-xs text-slate-400 flex items-center">
+                    <i class="fa-solid fa-location-dot text-rose-500 mr-2.5"></i> Sotuba ACI, Bamako, Mali
+                </p>
+                <p class="text-xs text-slate-400 flex items-center">
+                    <i class="fa-solid fa-clock text-rose-500 mr-2.5"></i> Lun - Ven : 07h30 - 22h00 | Dim : 14h00 - 19h00
+                </p>
+            </div>
+
+            <!-- CARTE INTERACTIVE -->
+            <div class="space-y-4">
+                <a href="https://www.google.com/maps/search/?api=1&query=Sotuba+ACI+Bamako+Mali" target="_blank" rel="noopener noreferrer" class="group block bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden hover:border-rose-600/50 transition-all duration-300">
+                    <div class="relative h-48">
+                        <img src="map.png" alt="Localisation ECOB - Sotuba ACI, Bamako" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <div class="flex items-center space-x-2 text-sm font-medium">
+                                <i class="fa-solid fa-location-dot text-rose-500"></i>
+                                <span>ECOB - Sotuba ACI, Bamako</span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-1">Cliquez pour ouvrir dans Google Maps</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-rose-600/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center space-x-1">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>Itinéraire</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-slate-950/50 border-t border-slate-800">
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span><i class="fa-solid fa-car mr-1.5"></i> 15 min du centre-ville</span>
+                            <span><i class="fa-solid fa-bus mr-1.5"></i> Accessible transport public</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-xs uppercase tracking-widest">Contact Direct Administration</h4>
+                <div class="space-y-2 text-xs">
+                    <a href="tel:+22377666637" class="block hover:text-white transition-colors"><i class="fa-solid fa-phone text-rose-500 mr-2"></i> +223 77 66 66 37</a>
+                    <a href="tel:+22375752248" class="block hover:text-white transition-colors"><i class="fa-solid fa-phone text-rose-500 mr-2"></i> +223 75 75 22 48</a>
+                    <a href="https://web.facebook.com/Ecob.Mali" target="_blank" class="block hover:text-white transition-colors"><i class="fa-brands fa-facebook text-rose-500 mr-2"></i> Rejoindre la communauté Facebook</a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-slate-900 mt-12 pt-6 text-center text-[11px] text-slate-600 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 ECOB - Université Bilingue. Tous droits réservés.</p>
+            <p class="tracking-wider uppercase text-[10px]">ECOB, LA MARCHE VERS L'EXCELLENCE</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DÉTAILS FILIÈRES -->
+    <div id="modalDept" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-slate-950 rounded-2xl border border-slate-800 w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-modal-in">
+            <div class="flex items-center justify-between p-6 border-b border-slate-800" id="modalDeptHeader">
+                <h3 class="serif-title text-xl font-bold text-white" id="modalDeptTitle">Détails de la Filière</h3>
+                <button id="closeModalDept" class="text-slate-400 hover:text-white transition-colors text-2xl leading-none">&times;</button>
+            </div>
+            <div class="p-6 space-y-6" id="modalDeptContent">
+                <!-- Contenu injecté par JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL INSCRIPTION -->
+    <div id="modalInscription" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-slate-950 rounded-2xl border border-slate-800 w-full max-w-md max-h-[90vh] overflow-y-auto animate-modal-in">
+            <div class="flex items-center justify-between p-6 border-b border-slate-800">
+                <h3 class="serif-title text-xl font-bold text-white">Inscription ECOB</h3>
+                <button id="closeModal" class="text-slate-400 hover:text-white transition-colors text-2xl leading-none">&times;</button>
+            </div>
+            <form id="formInscription" class="p-6 space-y-5" novalidate>
+                <div>
+                    <label for="nom" class="block text-xs font-medium text-slate-300 mb-1.5">Nom complet *</label>
+                    <input type="text" id="nom" name="nom" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all" placeholder="Votre nom complet">
+                </div>
+                <div>
+                    <label for="email" class="block text-xs font-medium text-slate-300 mb-1.5">Email *</label>
+                    <input type="email" id="email" name="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all" placeholder="votre@email.com">
+                </div>
+                <div>
+                    <label for="telephone" class="block text-xs font-medium text-slate-300 mb-1.5">Téléphone (WhatsApp) *</label>
+                    <input type="tel" id="telephone" name="telephone" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all" placeholder="+223 XX XX XX XX">
+                </div>
+                <div>
+                    <label for="niveau" class="block text-xs font-medium text-slate-300 mb-1.5">Niveau visé *</label>
+                    <select id="niveau" name="niveau" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all appearance-none bg-no-repeat bg-right pr-10" style="background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\"); background-size: 16px;">
+                        <option value="" disabled selected>Choisir votre niveau</option>
+                        <option value="L1">Licence 1 (L1)</option>
+                        <option value="L2">Licence 2 (L2)</option>
+                        <option value="L3">Licence 3 (L3)</option>
+                        <option value="M1">Master 1 (M1)</option>
+                        <option value="M2">Master 2 (M2)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="filiere" class="block text-xs font-medium text-slate-300 mb-1.5">Filière d'intérêt *</label>
+                    <select id="filiere" name="filiere" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all appearance-none bg-no-repeat bg-right pr-10" style="background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\"); background-size: 16px;">
+                        <option value="" disabled selected>Choisir votre filière</option>
+                        <option value="agro">Agro-Business & Agroéconomie</option>
+                        <option value="mines">Géologie & Mines</option>
+                        <option value="marketing">Marketing & Communication International</option>
+                        <option value="gea">Gestion des Entreprises (GEA)</option>
+                        <option value="comptabilite">Comptabilité et Fiscalité</option>
+                        <option value="logistique">Commerce International & Logistique</option>
+                        <option value="informatique">Informatique de Gestion</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mode" class="block text-xs font-medium text-slate-300 mb-1.5">Mode de paiement souhaité</label>
+                    <select id="mode" name="mode" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all appearance-none bg-no-repeat bg-right pr-10" style="background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\"); background-size: 16px;">
+                        <option value="integral">Paiement intégral (Ordinateur offert)</option>
+                        <option value="mensuel">Paiement mensuel (3 versements)</option>
+                        <option value="autre">À discuter avec l'administration</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message" class="block text-xs font-medium text-slate-300 mb-1.5">Message / Question</label>
+                    <textarea id="message" name="message" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all resize-none" placeholder="Votre message (optionnel)..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-rose-700 hover:bg-rose-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                    <span>Envoyer ma demande d'inscription</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                <p class="text-xs text-slate-500 text-center">En soumettant, vous acceptez d'être contacté par l'administration ECOB.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT FOR FLUID SCROLL TRANSITIONS -->
+    <script>
+        // Fluid Intersection Observer for revealing elements elegantly on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, no need to listen to it anymore
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(element => {
+            revealOnScroll.observe(element);
+        });
+
+        // Dynamic glassmorphism navigation behavior on scroll
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2', 'bg-slate-950/95', 'shadow-2xl');
+            } else {
+                navbar.classList.remove('py-2', 'bg-slate-950/95', 'shadow-2xl');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // MODAL INSCRIPTION
+        const modal = document.getElementById('modalInscription');
+        const openButtons = document.querySelectorAll('#openInscriptionHero, #openInscription');
+        const closeBtn = document.getElementById('closeModal');
+        const form = document.getElementById('formInscription');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        const API_BASE = 'http://localhost:3002/api';
+
+        openButtons.forEach(btn => btn.addEventListener('click', openModal));
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+        // Form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi...';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(`${API_BASE}/inscriptions`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.message || 'Erreur lors de l\'envoi');
+                }
+
+                alert('Demande d\'inscription envoyée ! L\'administration vous contactera sous 24h.');
+                form.reset();
+                closeModal();
+
+            } catch (error) {
+                alert('Erreur : ' + error.message);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        });
+
+        // MODAL DÉTAILS FILIÈRES
+        const deptData = {
+            tech: {
+                title: 'Technologie & Informatique',
+                icon: 'fa-microchip',
+                color: 'text-blue-500',
+                bgColor: 'bg-blue-600',
+                slogan: 'CONSTRUIS TON AVENIR DANS LE NUMÉRIQUE AVEC ECOB !',
+                specialites: [
+                    'Informatique de Gestion',
+                    'Réseaux & Télécommunications',
+                    'Informatique, Réseaux & Électronique',
+                    'Intelligence Artificielle (IA)'
+                ],
+                motsCles: ['Data Center', 'Développement Logiciel', 'Cybersécurité', 'Cloud Computing', 'Réseaux Fibre Optique'],
+                atouts: [
+                    'Laboratoires informatiques de dernière génération / modernes',
+                    'Projets pratiques et certifications professionnelles',
+                    'Stages en entreprises numériques',
+                    'Professeurs expérimentés et forte employabilité'
+                ]
+            },
+            com: {
+                title: 'Communication & Média',
+                icon: 'fa-broadcast-tower',
+                color: 'text-purple-500',
+                bgColor: 'bg-purple-600',
+                specialites: [
+                    'Marketing & Communication',
+                    'Journalisme & Communication',
+                    'Communication & Médias'
+                ],
+                atouts: [
+                    'Studios TV & Radio modernes et professionnels',
+                    'Stages professionnels garantis',
+                    'Production audiovisuelle réelle',
+                    'Équipements audiovisuels modernes'
+                ]
+            },
+            gestion: {
+                title: 'Gestion & Économie',
+                icon: 'fa-chart-line',
+                color: 'text-emerald-500',
+                bgColor: 'bg-emerald-600',
+                slogan: 'INSCRIVEZ-VOUS DÈS MAINTENANT !',
+                specialites: [
+                    'Finance & Comptabilité',
+                    'Gestion des Ressources Humaines',
+                    'Gestion Logistique & Transport',
+                    'Gestion des Entreprises & des Administrations'
+                ],
+                atouts: [
+                    'Stages en entreprises et études de cas réels',
+                    'Campus moderne et innovant',
+                    'Enseignants expérimentés'
+                ]
+            },
+            mines: {
+                title: 'Mines & Géologie (et Pétrole)',
+                icon: 'fa-mountain-sun',
+                color: 'text-amber-500',
+                bgColor: 'bg-amber-600',
+                partner: 'Partenaire officiel : SENO MINING SERVICES',
+                slogan: 'DEVENIR EXPERT • INNOVER • EXPLORER • VALORISER LES RESSOURCES DE DEMAIN',
+                specialites: [
+                    'Géologie appliquée & Exploration minière (Géologie générale)',
+                    'Topographie & Géomatique (SIG, GPS, Drones)',
+                    'Géotechnique & Environnement minier (Sécurité environnementale)',
+                    'Management & Économie minière',
+                    'Exploitation & Traitement des minerais',
+                    'Cartographie et prospection',
+                    'Ingénierie pétrolière'
+                ],
+                motsCles: ['Forage & Exploration', 'Exploitation Minière', 'Laboratoire de Géologie', 'Traitement des Minerais', 'Topographie & Drones'],
+                atouts: [
+                    'Partenariat exclusif avec SENO MINING SERVICES et l\'industrie minière',
+                    'Stages encadrés en entreprises minières et insertion professionnelle garantie',
+                    'Visites et sorties pédagogiques sur les sites miniers',
+                    'Laboratoires modernes de géologie'
+                ]
+            },
+            agro: {
+                title: 'Sciences Agronomiques / Agro-Business',
+                icon: 'fa-seedling',
+                color: 'text-green-500',
+                bgColor: 'bg-green-600',
+                specialites: [
+                    'Agro-Business / Agroéconomie',
+                    'Management Agroalimentaire',
+                    'Technique & Qualité Agroalimentaire',
+                    'Entrepreneuriat Agricole',
+                    'Agriculture Durable',
+                    'Production Horticole'
+                ],
+                atouts: [
+                    'Ferme pédagogique moderne',
+                    'Laboratoires agroalimentaires modernes',
+                    'Stages en entreprises agricoles'
+                ]
+            }
+        };
+
+        function openDeptModal(deptKey) {
+            const data = deptData[deptKey];
+            if (!data) return;
+
+            const modal = document.getElementById('modalDept');
+            const header = document.getElementById('modalDeptHeader');
+            const title = document.getElementById('modalDeptTitle');
+            const content = document.getElementById('modalDeptContent');
+
+            // Update header color - use inline color since Tailwind CSS vars don't exist
+            const colorMap = {
+                'bg-blue-600': '#2563eb',
+                'bg-purple-600': '#9333ea',
+                'bg-emerald-600': '#059669',
+                'bg-amber-600': '#d97706',
+                'bg-green-600': '#16a34a'
+            };
+            header.className = 'flex items-center justify-between p-6 border-b border-slate-800';
+            header.style.background = 'linear-gradient(90deg, ' + (colorMap[data.bgColor] + '20') + ', transparent)';
+
+            title.textContent = data.title;
+            title.className = 'serif-title text-xl font-bold text-white ' + data.color;
+
+            // Build content
+            let html = '';
+            
+            if (data.slogan) {
+                html += `<div class="bg-slate-900/50 border-l-4 border-${data.color.replace('text-', '')} p-4 rounded-r-lg"><p class="text-sm font-semibold ${data.color} italic">"${data.slogan}"</p></div>`;
+            }
+            if (data.partner) {
+                html += `<div class="bg-amber-900/30 border border-amber-800/50 rounded-lg p-4"><p class="text-amber-400 font-semibold text-sm">${data.partner}</p></div>`;
+            }
+
+            html += `<div class="space-y-4">`;
+
+            // Spécialisations
+            html += `<div>`;
+            html += `<h4 class="text-white font-semibold mb-3 flex items-center space-x-2"><i class="fa-solid fa-graduation-cap ${data.color}"></i><span>Spécialisations Bilingues</span></h4>`;
+            html += `<div class="grid grid-cols-1 md:grid-cols-2 gap-2">`;
+            data.specialites.forEach(spec => {
+                html += `<div class="bg-slate-900/50 border border-slate-800 rounded-lg p-3 text-sm"><i class="fa-solid fa-check ${data.color} mr-2"></i>${spec}</div>`;
+            });
+            html += `</div></div>`;
+
+            // Mots-clés
+            if (data.motsCles) {
+                html += `<div>`;
+                html += `<h4 class="text-white font-semibold mb-3 flex items-center space-x-2"><i class="fa-solid fa-tags ${data.color}"></i><span>Domaines Couverts</span></h4>`;
+                html += `<div class="flex flex-wrap gap-2">`;
+                data.motsCles.forEach(mot => {
+                    html += `<span class="px-3 py-1 bg-slate-900/50 border border-slate-800 rounded-full text-xs ${data.color}">${mot}</span>`;
+                });
+                html += `</div></div>`;
+            }
+
+            // Atouts
+            html += `<div>`;
+            html += `<h4 class="text-white font-semibold mb-3 flex items-center space-x-2"><i class="fa-solid fa-star ${data.color}"></i><span>Nos Atouts & Pourquoi Choisir ECOB</span></h4>`;
+            html += `<div class="space-y-2">`;
+            data.atouts.forEach(atout => {
+                html += `<div class="bg-slate-900/50 border border-slate-800 rounded-lg p-3 flex items-start space-x-3"><i class="fa-solid fa-arrow-right ${data.color} mt-0.5"></i><span class="text-sm text-slate-300">${atout}</span></div>`;
+            });
+            html += `</div></div>`;
+
+            html += `</div>`;
+
+            content.innerHTML = html;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDeptModal() {
+            const modal = document.getElementById('modalDept');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('closeModalDept').addEventListener('click', closeDeptModal);
+        document.getElementById('modalDept').addEventListener('click', (e) => { if (e.target.id === 'modalDept') closeDeptModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDeptModal(); });
+    </script>
+</body>
+</html>

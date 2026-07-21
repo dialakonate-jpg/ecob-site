@@ -1044,7 +1044,16 @@
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi...';
 
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            const rawData = Object.fromEntries(formData.entries());
+      const data = {
+        nom_complet: rawData.nom,
+        email: rawData.email,
+        telephone: rawData.telephone,
+        niveau: rawData.niveau,
+        filiere: rawData.filiere,
+        mode_paiement: rawData.mode,
+        message: rawData.message
+      };
 
             try {
                 const response = await fetch(`${API_BASE}/inscriptions`, {
